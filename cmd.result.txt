@@ -1,0 +1,38 @@
+
+
+
+
+https://github.com/pangchia/yolov5.git
+
+
+
+
+C:\Users\lubq>conda info --envs
+
+
+
+C:\Users\lubq>conda activate myenv
+
+
+(myenv) E:\personal\yolov5>pip install torch torchvision torchaudio -i https://mirrors.aliyun.com/pypi/simple/
+
+(myenv) E:\personal\yolov5>pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
+
+(myenv) E:\personal\yolov5>python train.py --cfg models/yolov5s-smc.yaml --data data/coco128-smc.yaml --weights yolov5s.pt --epoch 50 --batch-size 4 --name smc-yolo5
+
+
+...
+
+
+
+50 epochs completed in 0.247 hours.
+Optimizer stripped from runs\train\smc-yolo54\weights\last.pt, 14.4MB
+Optimizer stripped from runs\train\smc-yolo54\weights\best.pt, 14.4MB
+
+Validating runs\train\smc-yolo54\weights\best.pt...
+Fusing layers...
+YOLOv5s-smc summary: 157 layers, 7012822 parameters, 0 gradients, 15.8 GFLOPs
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:   0%|          | 0/1 [00:00<?WARNING  NMS time limit 0.800s exceeded
+                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 1/1 [00:02<0
+                   all          6          6    0.00333      0.833     0.0159    0.00662
+Results saved to runs\train\smc-yolo54
