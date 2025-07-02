@@ -1,4 +1,10 @@
 
+！！！ image 图片大小不宜超过 640*640 裁剪后再试
+
+
+
+
+
 cuda 版本
 
 https://blog.csdn.net/c2793/article/details/134143566
