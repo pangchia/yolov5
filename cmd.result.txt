@@ -52,3 +52,5 @@ Results saved to runs\train\smc-yolo54
 > python val.py   --data data/coco128-smc.yaml --cfg models/yolov5s-smc.yaml --weights runs/train/smc-yolo5/weights/best.pt
 
 > python detect.py --weights runs/train/smc-yolo5/weights/best.pt  --source source
+
+> python detect.py --weights runs/train/smc-yolo5/weights/best.pt  --source vidio-source
