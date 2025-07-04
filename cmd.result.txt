@@ -54,3 +54,13 @@ Results saved to runs\train\smc-yolo54
 > python detect.py --weights runs/train/smc-yolo5/weights/best.pt  --source source
 
 > python detect.py --weights runs/train/smc-yolo5/weights/best.pt  --source vidio-source
+
+
+(myenv) E:\personal\yolov5>pip install onnx==1.16.0 --no-deps
+
+
+$ pip install  coremltools  onnx-simplifier onnxruntime openvino-dev tensorflow-cpu -i https://mirrors.aliyun.com/pypi/simple/ # CPU
+$ pip install  coremltools  onnx-simplifier onnxruntime-gpu openvino-dev tensorflow -i https://mirrors.aliyun.com/pypi/simple/ # GPU
+
+
+> python export.py --weights runs/train/smc-yolo5/weights/best.pt --include onnx torchscript engine --dynamic --device 0

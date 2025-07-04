@@ -1,0 +1,22 @@
+(myenv) E:\personal\yolov5>python export.py --weights runs/train/smc-yolo5/weights/best.pt --include onnx torchscript engine
+export: data=E:\personal\yolov5\data\coco128.yaml, weights=['runs/train/smc-yolo5/weights/best.pt'], imgsz=[640, 640], batch_size=1, device=cpu, half=False, inplace=False, keras=False, optimize=False, int8=False, per_tensor=False, dynamic=False, cache=, simplify=False, mlmodel=False, opset=17, verbose=False, workspace=4, nms=False, agnostic_nms=False, topk_per_class=100, topk_all=100, iou_thres=0.45, conf_thres=0.25, include=['onnx', 'torchscript', 'engine']
+YOLOv5  v7.0-434-g94950101 Python-3.9.23 torch-2.7.1+cpu CPU
+
+Fusing layers...
+YOLOv5s-smc summary: 157 layers, 7012822 parameters, 0 gradients, 15.8 GFLOPs
+
+PyTorch: starting from runs\train\smc-yolo5\weights\best.pt with output shape (1, 25200, 6) (13.8 MB)
+
+TorchScript: starting export with torch 2.7.1+cpu...
+TorchScript: export success  1.1s, saved as runs\train\smc-yolo5\weights\best.torchscript (27.2 MB)
+TensorRT: export failure  0.0s: export running on CPU but must be on GPU, i.e. `python export.py --device 0`
+
+ONNX: starting export with onnx 1.16.0...
+ONNX: export success  0.7s, saved as runs\train\smc-yolo5\weights\best.onnx (27.2 MB)
+
+Export complete (2.2s)
+Results saved to E:\personal\yolov5\runs\train\smc-yolo5\weights
+Detect:          python detect.py --weights runs\train\smc-yolo5\weights\best.onnx
+Validate:        python val.py --weights runs\train\smc-yolo5\weights\best.onnx
+PyTorch Hub:     model = torch.hub.load('ultralytics/yolov5', 'custom', 'runs\train\smc-yolo5\weights\best.onnx')
+Visualize:       https://netron.app
